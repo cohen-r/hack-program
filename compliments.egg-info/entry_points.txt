@@ -1,3 +1,0 @@
-[console_scripts]
-compliments = compliments.__main__:main
-
