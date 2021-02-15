@@ -16,7 +16,7 @@ pd.set_option("display.max_colwidth", 10000)
 
 def compliment_me(mood):
 	"""
-	The compliment_me function returns a compliment based on 1 of three moods
+	The compliment_me function returns a compliment based on 1 of three moods: angry, sad, or happy
 	"""
 
 	sad_compliments = compliments["sad"]
@@ -31,6 +31,9 @@ def compliment_me(mood):
 	
 		
 def plant_me():
+	"""
+	Function that returns a randomly selected house plant
+	"""
 	plants = compliments["plant"]
 	print("Check out this house plant to make you smile: " 
 		+ plants.sample().to_string(index = False))
