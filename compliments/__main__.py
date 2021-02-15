@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 
 """
-Command line interface to compliment_me
+
+Command line interface to compliment_me and plant_me
+
 """
 
 import argparse
-from compliments import compliment_me
+from compliments import compliment_me, plant_me
 
 def parse_command_line():
     "parses args for the compliment_me funtion"
@@ -43,13 +45,14 @@ def main():
     # pass argument to call compliments function
     if args.sad:
         compliment_me("sad")
+        plant_me()
     elif args.happy:
         compliment_me("happy")
+        plant_me()
     elif args.angry:
         compliment_me("angry")
+        plant_me()
 
 
 if __name__ == "__main__":
-    compliment_me("happy")
     compliment_me("angry")
-    compliment_me("sad")

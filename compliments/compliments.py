@@ -2,33 +2,41 @@
 
 """
 
-a function that gives a compliment or not based on your mood
+Setting up recieving a plant name and a complument based on mood
 
 """
-import random
+import numpy as np
+import pandas as pd
 
-sad_compliments = [
-	"you are kind!",
-	"you are beautiful!",
-	"you are smart!",
-	"your friends love you!"
-]
 
-angry_compliments = [
-	"take three deep breaths and know you are loved",
-	"go for a walk and think of sunflowers",
-	"do you need a hug?"
-]
+# URL = "https:/github.com/cohen-r/hack-program/blob/main/compliments.csv"
 
-def compliment_me(arg):
-	if arg == "sad":
-		print("I'm sorry to hear that, " + random.choice(sad_compliments))
-	elif arg == "happy":
+compliments = pd.read_csv("compliments.csv", dtype = "string")
+pd.set_option("display.max_colwidth", 10000)
+
+def compliment_me(mood):
+	"""
+	The compliment_me function returns a compliment based on 1 of three moods
+	"""
+
+	sad_compliments = compliments["sad"]
+	angry_compliments = compliments["angry"]
+
+	if mood == "sad":
+		print("I'm sorry to hear that, " + sad_compliments.sample().to_string(index = False))
+	elif mood == "happy":
 		print("I'm happy you're happy!")
-	elif arg == "angry":
-		print("We all get angry sometimes, " + random.choice(angry_compliments))
+	elif mood == "angry":
+		print("We all get angry sometimes, " + str(angry_compliments.sample()))
+	
+		
+def plant_me():
+	plants = compliments["plant"]
+	print("Check out this house plant to make you smile: " 
+		+ plants.sample().to_string(index = False))
+
+
 
 if __name__ == "__main__":
-	compliment_me("angry")
-	compliment_me("sad")
-	compliment_me("happy")
+	compliment_me(mood = "sad")
+	plant_me()

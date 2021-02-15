@@ -2,4 +2,4 @@
 
 __version__ = "0.0.1"
 
-from compliments.compliments import compliment_me
+from compliments.compliments import compliment_me, plant_me
