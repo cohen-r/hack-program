@@ -1,7 +1,0 @@
-README.md
-setup.py
-compliments.egg-info/PKG-INFO
-compliments.egg-info/SOURCES.txt
-compliments.egg-info/dependency_links.txt
-compliments.egg-info/entry_points.txt
-compliments.egg-info/top_level.txt
