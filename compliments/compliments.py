@@ -9,8 +9,6 @@ import numpy as np
 import pandas as pd
 
 
-# URL = "https:/github.com/cohen-r/hack-program/blob/main/compliments.csv"
-
 compliments = pd.read_csv("compliments.csv", dtype = "string")
 pd.set_option("display.max_colwidth", 10000)
 
